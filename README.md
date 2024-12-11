@@ -1,4 +1,4 @@
-# FP-JARKOM-KELOMPOK-3
+# Final Project Jaringan Komputer 2024 (A)
 
 ## Anggota Kelompok
 
