@@ -235,6 +235,62 @@ Konfigurasikan NAT Overload (PAT) pada router utama untuk memungkinkan
 perangkat dalam jaringan lokal mengakses internet, misalnya dengan melakukan ping
 ke 8.8.8.8. **(15 poin)**
 
+> `Inti dari bagian ini adalah bagaimana cara agar jaringan lokal dapat mengakses internet melalui NAT (Network Address Translation). Jadi, ketika client pada jaringan lokal ingin mengakses internet, IP Local tersebut perlu di translate terlebih dahulu ke IP Public`
+
+_Konfigurasi pada "Router0"_
+
+1. Masuk CLI, lalu jalankan command
+
+   <img src="./img/natinside.png">
+
+   > melihat dari topologi, bagian bawah dari Router0 adalah jaringan lokal yang melalui gig0/0/0
+
+2. Kita juga perlu untuk mengatur NAT untuk jaringan public
+
+   <img src="./img/natoutside.png">
+
+   > sama seperti sebelumnya, namun sekarang kita handle jaringan public yang berada di atas Router0
+
+3. `exit` pada CLI, lalu agar NAT berjalan dan bisa untuk translate IP. Jalankan command ini untuk translate IP Local ke IP Public ataupun sebaliknya
+
+```
+ip nat inside source list 1 interface GigabitEthernet0/0/1 overload
+```
+
+<img src="./img/nattranslateip.png">
+
+4. Pastikan untuk membuat `access-list 1` agar bisa diakses dengan cara `access-list [nomor-list] permit any`
+
+<img src="./img/nataccesslist.png">
+
+5. Jangan lupa untuk menambahkan DNS Server `8.8.8.8` pada setiap client
+
+6. Setelah itu, kita perlu untuk menambahkan Static Route pada setiap router di jaringan lokal, agar bisa mengakses internet dengan cara:
+
+<img src="./img/natstaticrouter.png">
+
+`- Network = 8.8.8.0 (Internet)`
+
+`- Mask = 255.255.255.0`
+
+`- Next Hop = [Sesuaikan dengan jalur masuk routernya]`
+
+> Contoh:
+
+<img src="./img/natcontoh.png">
+
+> Reference: https://medium.com/@romanyoga4/konfigurasi-static-nat-di-cisco-packet-tracer-belajar-menjadi-network-engineer-part-26-03dc026ac24b
+
+7. Terakhir, kita lakukan test ping dan mengecek apakah terjadi IP Translation
+
+`departemen customer service ke facebook.com`
+
+> <img src="./img/nattestping.png">
+
+`IP Translation`
+
+> <img src="./img/natiptranslate.png">
+
 ## 7. Konfigurasi Generic Routing Encapsulation (GRE Tunnel)
 
 Hubungkan Gedung Utama ke Cabang menggunakan GRE Tunnel. Konfigurasikan
