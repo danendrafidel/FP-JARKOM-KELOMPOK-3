@@ -174,6 +174,39 @@ mengalokasikan alamat IP secara dinamis kepada perangkat mereka. Konfigurasikan
 DHCP server pada router dan pastikan perangkat di tiga departemen tersebut
 mendapatkan IP otomatis sesuai dengan rentang yang telah ditentukan. **(15 poin)**
 
+**1. Ke router Lantai 2 > FastEthernet0/1 (gateway subnet A8)**
+
+![image](https://github.com/user-attachments/assets/b33bf334-acd3-4133-b674-7c662e648890)
+
+**2. Exit.**
+
+![image](https://github.com/user-attachments/assets/7a1d0737-b2ef-4bbf-9780-f18a973f58ee)
+
+**3. Atur konfigurasi DHCP di Router Lantai 2 seperti ini:**
+
+```bash
+ip dhcp pool A8
+network <NID_A8> <Subnet_Mask_A8>
+default-router <Gateway_Client_A8>
+dns-server <IP_DNS>
+```
+
+![image](https://github.com/user-attachments/assets/e68c0da0-15b3-4239-9733-4d2f67380c8b)
+
+**4. Setelah konfigurasi DHCP diatur, check IP Configuration pada PC `Dept. R&D`, `Dept. Pemasaran` dan `Dept. Penjualan`.**
+
+![image](https://github.com/user-attachments/assets/2cef4ba1-fcb9-4633-bfd9-f4af42d0971d)
+
+> Dept. R&D: DHCP request successful.
+
+![image](https://github.com/user-attachments/assets/1cc013f2-2ec3-4a5b-9445-3289cd30814e)
+
+> Dept. Pemasaran: DHCP request successful.
+
+![image](https://github.com/user-attachments/assets/32f721bd-5972-4d81-bdd9-134c1d1b973c)
+
+> Dept. Penjualan: DHCP request successful.
+
 ## 5. Konfigurasi Static Routing
 
 agar perangkat di setiap departemen dapat berkomunikasi
