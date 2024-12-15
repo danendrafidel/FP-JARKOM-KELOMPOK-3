@@ -331,3 +331,57 @@ Generic Routing Encapsulation (GRE Tunnel) antara router di gedung utama dan
 router di cabang untuk membangun koneksi virtual yang aman. Pastikan kedua router
 dapat saling berkomunikasi melalui GRE Tunnel dan verifikasi konektivitasnya dengan
 melakukan ping antar router atau perangkat di masing-masing jaringan. (10 poin)
+
+> Pastikan sudah terbagi IP untuk GRE Tunnel
+
+<img src="./img/IPGRE.png">
+
+> Tambahkan garis pada topo agar lebih mudah dipahami
+
+<img src="./img/topogre.png">
+
+## GRE Configuration
+
+- Router Gedung Utama
+
+lakukan configurasi ini:
+
+```bash
+int tunnel 0
+ip add 10.77.2.129 255.255.255.252
+tunnel source FastEthernet0/0
+tunnel destination 10.77.0.26 [ip fa0/0 dari router cabang]
+```
+
+test ping dari router gedung utama ke router cabang:
+
+<img src="./img/pingdariutama.png">
+
+- Router Cabang
+
+lakukan configurasi ini:
+
+```bash
+int tunnel 0
+ip add 10.77.2.130 255.255.255.252
+tunnel source Serial0/1/0
+tunnel destination 10.77.0.21 [ip fa0/0 dari router gedung utama]
+```
+
+test ping dari router cabang ke router gedung utama:
+
+<img src="./img/pingcabangkeutama.png">
+
+- Lakukan routing ke subnet A6, A12, A13 pada router lainnya agar terkoneksi:
+
+> contoh
+
+<img src="./img/grerouting.png">
+
+> pastikan routing sudah dua arah
+
+- test ping ke cabang
+
+`ping dari Dept. Pemasaran ke Perangkat Cabang`
+
+<img src="./img/pemasarankecabang.png">
