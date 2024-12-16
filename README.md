@@ -9,7 +9,7 @@
 | 3   | Hazwan Adhikara Nasution | 5027231017 |
 | 4   | Rafael Gunawan           | 5027231019 |
 
-## SOAL
+## SOAL 
 
 Perusahaan ARA Tech tengah mengalami pertumbuhan yang pesat dan memerlukan
 infrastruktur jaringan yang handal untuk mendukung kelancaran operasionalnya. Saat ini,
