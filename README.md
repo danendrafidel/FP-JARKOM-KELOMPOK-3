@@ -1,6 +1,6 @@
 # Final Project Jaringan Komputer 2024 (A)
 
-## Anggota Kelompok
+## Anggota Kelompok 
 
 | No  | Nama Anggota             | NRP        |
 | --- | ------------------------ | ---------- |
