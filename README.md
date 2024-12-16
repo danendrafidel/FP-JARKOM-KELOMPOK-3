@@ -1,6 +1,6 @@
 # Final Project Jaringan Komputer 2024 (A)
 
-## Anggota Kelompok 
+## Anggota Kelompok
 
 | No  | Nama Anggota             | NRP        |
 | --- | ------------------------ | ---------- |
@@ -9,7 +9,7 @@
 | 3   | Hazwan Adhikara Nasution | 5027231017 |
 | 4   | Rafael Gunawan           | 5027231019 |
 
-## SOAL 
+## SOAL
 
 Perusahaan ARA Tech tengah mengalami pertumbuhan yang pesat dan memerlukan
 infrastruktur jaringan yang handal untuk mendukung kelancaran operasionalnya. Saat ini,
@@ -48,7 +48,7 @@ Selain itu, perusahaan juga memiliki satu cabang di kota lain yang memerlukan ko
 gedung utama melalui jaringan VPN. Di cabang tersebut, terdapat satu subnet yang
 mencakup seluruh perangkat di cabang (sekitar 40 perangkat).
 
-## 1. Topologi
+## 1. Topologi (Rafael Gunawan)
 
 yang mencakup gedung utama dengan lima lantai dan
 cabang yang terhubung melalui VPN di Cisco Packet Tracer. Gunakan perangkat
@@ -57,7 +57,7 @@ topologi tersebut. **(20 poin)**
 
 ![alt text](img/Topologi.png)
 
-## 2. Rute Subnet
+## 2. Rute Subnet (Danendra Fidel Khansa)
 
 Subnetting pada jaringan dan tentukan Subnet Mask, Network ID,
 Broadcast Address, serta Range IP untuk setiap subnet. Buatlah tabel alokasi subnet
@@ -102,7 +102,7 @@ untuk setiap departemen berdasarkan jumlah perangkat yang dibutuhkan di masingma
 
 [Spreadsheet Pembagian IP | VLSM |](https://docs.google.com/spreadsheets/d/1JpLVpSvkCfJNxGBvMkfkIv3K3mBEaEyyrNaPk9eCnj8/edit?usp=sharing)
 
-## 3. Konfigurasi Static IP
+## 3. Konfigurasi Static IP (Danendra Fidel Khansa)
 
 pada setiap perangkat jaringan di semua departemen, kecuali
 lantai 2, sesuai dengan pembagian subnetting yang telah dilakukan. Pastikan alamat
@@ -167,7 +167,7 @@ Client Cabang
 
 ![alt text](<img/Cabang (2).png>)
 
-## 4. Konfigurasi DHCP Lantai 2
+## 4. Konfigurasi DHCP Lantai 2 (Tio Axellino Irin)
 
 Departemen R&D, Pemasaran, dan Penjualan akan menggunakan DHCP untuk
 mengalokasikan alamat IP secara dinamis kepada perangkat mereka. Konfigurasikan
@@ -207,7 +207,7 @@ dns-server <IP_DNS>
 
 > Dept. Penjualan: DHCP request successful.
 
-## 5. Konfigurasi Static Routing
+## 5. Konfigurasi Static Routing (Danendra Fidel Khansa)
 
 agar perangkat di setiap departemen dapat berkomunikasi
 lintas subnet. Jangan menggunakan default route untuk menghubungkan subnetsubnet yang ada. Pastikan setiap router pada masing-masing lantai terhubung dengan
@@ -261,7 +261,7 @@ benar dan dapat melakukan routing antar subnet. **(15 poin)**
 
 ![alt text](<img/Routing Cabang (2).png>)
 
-## 6. Konfigurasi NAT Overload (PAT)
+## 6. Konfigurasi NAT Overload (PAT) (Hazwan Adhikara Nasution)
 
 Perusahaan membutuhkan akses ke internet untuk semua perangkat yang terhubung.
 Konfigurasikan NAT Overload (PAT) pada router utama untuk memungkinkan
@@ -324,7 +324,7 @@ ip nat inside source list 1 interface GigabitEthernet0/0/1 overload
 
 > <img src="./img/natiptranslate.png">
 
-## 7. Konfigurasi Generic Routing Encapsulation (GRE Tunnel)
+## 7. Konfigurasi Generic Routing Encapsulation (GRE Tunnel) (Hazwan Adhikara Nasution)
 
 Hubungkan Gedung Utama ke Cabang menggunakan GRE Tunnel. Konfigurasikan
 Generic Routing Encapsulation (GRE Tunnel) antara router di gedung utama dan
@@ -385,3 +385,9 @@ test ping dari router cabang ke router gedung utama:
 `ping dari Dept. Pemasaran ke Perangkat Cabang`
 
 <img src="./img/pemasarankecabang.png">
+
+## Video Demo
+
+[Link Video Demo Youtube](https://youtu.be/JlxlwuMkru0)
+
+# TERIMA KASIH
